@@ -26,20 +26,23 @@ We hope to see your contribution soon!
 
 The following tools are required in order to start the installation.
 
-- [VirtualBox](https://www.virtualbox.org/)
-- [Vagrant](https://www.vagrantup.com/)
+- [Node](https://nodejs.org/en/download/)
 
 ## Installation
 
 > Note that you're free to adjust the `~/Sites/laravelio` location to any directory you want on your machine.
 
 1. Clone this repository: `git clone git@github.com:laravelio/laravel-io.git ~/Sites/laravelio`
-2. Run `composer start`
-4. Run `vagrant up`
-5. SSH into your Vagrant box, go to `/home/vagrant/Code/laravelio` and run `composer setup`
-6. Add `192.168.10.10 laravelio.app` to your computer's `/etc/hosts` file
-7. Setup a working e-mail driver like [Mailtrap](https://mailtrap.io/)
-8. (optional) Set up Github authentication (see below)
+2. Run `composer install`
+3. Run `npm install`
+4. Copy sample env file to `cp .env.example .env`
+5. Run `php artisan key:generate`
+6. Run `php artisan migrate`
+7. Run `php artisan db:seed`
+8. Run `npm run dev`
+9. Run `php artisan serve`
+10. Setup a working e-mail driver like [Mailtrap](https://mailtrap.io/)
+11. (optional) Set up Github authentication (see below)
 
 You can now visit the app in your browser by visiting [http://laravelio.app](http://laravelio.app). If you seeded the database you can login into a test account with `johndoe` & `password`.
 
